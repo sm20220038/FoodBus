@@ -1,0 +1,17 @@
+package rs.fon.bg.ac.rs.marinkovic_stefan.dtos.reviewDtos;
+
+import rs.fon.bg.ac.rs.marinkovic_stefan.domain.Review;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+public record ReviewResponseDto(UUID id, int rating, String comment, LocalDateTime createdAt,
+                                String customerName, String restaurantName) {
+
+    public static ReviewResponseDto fromEntity(Review review){
+        String customerName = (review.getCustomer() != null) ? review.getCustomer().getName() : "Nema kupca";
+        String restaurantName = (review.getRestaurant() != null) ? review.getRestaurant().getName() : "Nema restorana";
+        return new ReviewResponseDto(review.getId(), review.getRating(), review.getComment(),
+                review.getCreatedAt(), customerName, restaurantName);
+    }
+}
