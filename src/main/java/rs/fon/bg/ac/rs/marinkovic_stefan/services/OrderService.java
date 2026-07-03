@@ -79,7 +79,7 @@ public class OrderService {
             if (!menuItem.isAvailable()) {
                 throw new IllegalArgumentException("Menu item " + menuItem.getName() + " is not available");
             }
-            BigDecimal subtotal = menuItem.getPrice();
+            BigDecimal subtotal = menuItem.getPrice().multiply(BigDecimal.valueOf(itemAdd.quantity()));
             OrderItem orderItem = OrderItem.builder()
                     .quantity(itemAdd.quantity())
                     .unitPrice(menuItem.getPrice())
