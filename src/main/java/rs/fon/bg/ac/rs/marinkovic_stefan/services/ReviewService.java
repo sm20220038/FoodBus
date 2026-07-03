@@ -9,6 +9,7 @@ import rs.fon.bg.ac.rs.marinkovic_stefan.domain.Restaurant;
 import rs.fon.bg.ac.rs.marinkovic_stefan.domain.Review;
 import rs.fon.bg.ac.rs.marinkovic_stefan.dtos.reviewDtos.ReviewAddDto;
 import rs.fon.bg.ac.rs.marinkovic_stefan.dtos.reviewDtos.ReviewResponseDto;
+import rs.fon.bg.ac.rs.marinkovic_stefan.dtos.reviewDtos.ReviewUpdateDto;
 import rs.fon.bg.ac.rs.marinkovic_stefan.repositories.CustomerRepository;
 import rs.fon.bg.ac.rs.marinkovic_stefan.repositories.OrderRepository;
 import rs.fon.bg.ac.rs.marinkovic_stefan.repositories.RestaurantRepository;
@@ -70,14 +71,51 @@ public class ReviewService {
     }
 
     /**
+     * Updates the rating and comment of an existing review and recalculates
+     * the average rating of the reviewed restaurant.
+     *
+     * @param id unique identifier of the review to update.
+     * @param reviewUpdate ReviewUpdateDto containing the new rating and comment.
+     * @return ReviewResponseDto containing the updated review information.
+     * @throws jakarta.persistence.EntityNotFoundException If the review cannot be found.
+     */
+    @Transactional
+    public ReviewResponseDto update(Long id, ReviewUpdateDto reviewUpdate){
+        Review review = reviewRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Review doesnt exist"));
+        review.setRating(reviewUpdate.rating());
+        review.setComment(reviewUpdate.comment());
+        Review saved = reviewRepository.save(review);
+        updateRestaurantRating(review.getRestaurant());
+        return ReviewResponseDto.fromEntity(saved);
+    }
+
+    /**
+     * Deletes an existing review and recalculates the average rating of the reviewed restaurant.
+     *
+     * @param id unique identifier of the review to delete.
+     * @throws jakarta.persistence.EntityNotFoundException If the review cannot be found.
+     */
+    @Transactional
+    public void delete(Long id){
+        Review review = reviewRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Review doesnt exist"));
+        Restaurant restaurant = review.getRestaurant();
+        reviewRepository.delete(review);
+        updateRestaurantRating(restaurant);
+    }
+
+    /**
      * Recalculates the average rating of a restaurant from all of its reviews
-     * and stores the new value.
+     * and stores the new value. When there are no reviews left the rating is reset to zero.
      *
      * @param restaurant restaurant whose average rating is recalculated.
      */
     private void updateRestaurantRating(Restaurant restaurant) {
         List<Review> reviews = reviewRepository.findAllByRestaurantId(restaurant.getId());
         if (reviews.isEmpty()) {
+            restaurant.setRating(0.0);
+            restaurantRepository.save(restaurant);
             return;
         }
         double sum = 0;

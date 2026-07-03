@@ -6,9 +6,7 @@ import org.springframework.data.repository.query.Param;
 import rs.fon.bg.ac.rs.marinkovic_stefan.domain.Restaurant;
 
 import java.util.List;
-import java.util.UUID;
-
-public interface RestaurantRepository extends JpaRepository<Restaurant, UUID> {
+public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     @Query("SELECT r FROM Restaurant r WHERE " +
             "(:cuisine IS NULL OR LOWER(r.cuisine) = LOWER(:cuisine)) " +
             "AND (:minRating IS NULL OR r.rating >= :minRating) " +
@@ -18,4 +16,6 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, UUID> {
             @Param("minRating") Double minRating,
             @Param("name") String name
     );
+
+    boolean existsByEmail(String email);
 }

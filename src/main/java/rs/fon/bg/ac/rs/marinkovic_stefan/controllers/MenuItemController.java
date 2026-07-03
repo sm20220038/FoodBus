@@ -5,11 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.fon.bg.ac.rs.marinkovic_stefan.dtos.menuItemDtos.MenuItemAddDto;
 import rs.fon.bg.ac.rs.marinkovic_stefan.dtos.menuItemDtos.MenuItemResponseDto;
+import rs.fon.bg.ac.rs.marinkovic_stefan.dtos.menuItemDtos.MenuItemUpdateDto;
 import rs.fon.bg.ac.rs.marinkovic_stefan.services.MenuItemService;
 
 import java.util.List;
-import java.util.UUID;
-
 @RestController
 public class MenuItemController {
     private final MenuItemService menuItemService;
@@ -33,7 +32,7 @@ public class MenuItemController {
     }
 
     @GetMapping("api/restaurants/{restaurantId}/menu-items")
-    public ResponseEntity<Object> viewMenu(@PathVariable UUID restaurantId){
+    public ResponseEntity<Object> viewMenu(@PathVariable Long restaurantId){
         try {
             List<MenuItemResponseDto> response = menuItemService.viewMenu(restaurantId);
             return ResponseEntity
@@ -46,8 +45,19 @@ public class MenuItemController {
         }
     }
 
+    @PutMapping("api/restaurants/{restaurantId}/menu-items/{id}")
+    public ResponseEntity<Object> update(@PathVariable Long restaurantId, @PathVariable Long id,
+                                         @RequestBody MenuItemUpdateDto menuItemUpdate){
+        try {
+            MenuItemResponseDto response = menuItemService.update(restaurantId, id, menuItemUpdate);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
     @DeleteMapping("api/restaurants/{restaurantId}/menu-items/{id}")
-    public ResponseEntity<Object> delete(@PathVariable UUID restaurantId, @PathVariable UUID id){
+    public ResponseEntity<Object> delete(@PathVariable Long restaurantId, @PathVariable Long id){
         try {
             menuItemService.delete(restaurantId, id);
             return ResponseEntity
