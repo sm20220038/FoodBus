@@ -35,7 +35,7 @@ public class OrderItem {
      * Number of units of the menu item in this order line.
      * Allowed values: Must be at least 1.
      */
-    @Min(value = 0, message = "Quantity must be at least 0")
+    @Min(value = 1, message = "Quantity must be at least 1")
     private int quantity;
 
     /**
