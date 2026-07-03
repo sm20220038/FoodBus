@@ -6,8 +6,6 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.List;
-import java.util.UUID;
-
 /**
  * Represents a customer who orders food through the FoodBus application.
  * Holds contact and delivery information and maps all orders the customer
@@ -26,8 +24,8 @@ public class Customer {
      * Unique identifier for the customer.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * Full name of the customer.

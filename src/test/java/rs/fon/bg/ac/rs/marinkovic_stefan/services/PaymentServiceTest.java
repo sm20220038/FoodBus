@@ -20,8 +20,6 @@ import rs.fon.bg.ac.rs.marinkovic_stefan.repositories.PaymentRepository;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Optional;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -37,12 +35,12 @@ class PaymentServiceTest {
     @InjectMocks
     private PaymentService paymentService;
 
-    private UUID orderId;
+    private Long orderId;
     private Order sampleOrder;
 
     @BeforeEach
     void setUp() {
-        orderId = UUID.randomUUID();
+        orderId = 1L;
 
         sampleOrder = Order.builder()
                 .id(orderId)

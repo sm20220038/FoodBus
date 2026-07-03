@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Loads a small set of sample data into an empty database on application startup.
  * Runs only when there are no restaurants yet, so restarting the application does
- * not create duplicate records. Uses the repositories directly so that UUID keys
+ * not create duplicate records. Uses the repositories directly so that Long keys
  * and entity relationships are populated by the persistence provider.
  * @author Stefan Marinkovic
  */

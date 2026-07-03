@@ -15,8 +15,6 @@ import org.mockito.Mockito;
 
 import java.math.BigDecimal;
 import java.util.Set;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderItemTest {
@@ -47,7 +45,7 @@ class OrderItemTest {
     @DisplayName("Should pass validation with valid order item parameters")
     void validate_ValidOrderItem_NoViolations(int quantity, String unitPrice, String subtotal) {
         OrderItem orderItem = OrderItem.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .quantity(quantity)
                 .unitPrice(new BigDecimal(unitPrice))
                 .subtotal(new BigDecimal(subtotal))

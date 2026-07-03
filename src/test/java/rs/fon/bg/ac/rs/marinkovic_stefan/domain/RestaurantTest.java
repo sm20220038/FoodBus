@@ -13,8 +13,6 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Set;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class RestaurantTest {
@@ -40,7 +38,7 @@ class RestaurantTest {
     @DisplayName("Should pass validation with valid restaurant parameters")
     void validate_ValidRestaurant_NoViolations(String name, String cuisine, double rating) {
         Restaurant restaurant = Restaurant.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .name(name)
                 .address("Bulevar kralja Aleksandra 73, Beograd")
                 .cuisine(cuisine)

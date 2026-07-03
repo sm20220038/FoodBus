@@ -20,8 +20,6 @@ import rs.fon.bg.ac.rs.marinkovic_stefan.repositories.ReviewRepository;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -41,15 +39,15 @@ class ReviewServiceTest {
     @InjectMocks
     private ReviewService reviewService;
 
-    private UUID customerId;
-    private UUID restaurantId;
+    private Long customerId;
+    private Long restaurantId;
     private Customer sampleCustomer;
     private Restaurant sampleRestaurant;
 
     @BeforeEach
     void setUp() {
-        customerId = UUID.randomUUID();
-        restaurantId = UUID.randomUUID();
+        customerId = 1L;
+        restaurantId = 2L;
 
         sampleCustomer = Customer.builder()
                 .id(customerId)

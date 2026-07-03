@@ -13,8 +13,6 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Set;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
@@ -35,7 +33,7 @@ class CustomerTest {
     @DisplayName("Should pass validation when all customer fields are valid")
     void validate_ValidCustomer_NoViolations() {
         Customer customer = Customer.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .name("Marko Markovic")
                 .email("marko.markovic@gmail.com")
                 .phone("0641234567")

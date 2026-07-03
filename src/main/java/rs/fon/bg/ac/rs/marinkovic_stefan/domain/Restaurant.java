@@ -8,8 +8,6 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.List;
-import java.util.UUID;
-
 /**
  * Represents a restaurant that offers food through the FoodBus application.
  * Encapsulates basic information about the restaurant, its average rating,
@@ -29,8 +27,8 @@ public class Restaurant {
      * Unique identifier for the restaurant.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * Name of the restaurant.

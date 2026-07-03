@@ -13,8 +13,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
 /**
  * Service for managing customer orders.
  * Handles the whole order lifecycle: creation with total calculation,
@@ -108,7 +106,7 @@ public class OrderService {
      * @throws java.lang.IllegalArgumentException If the transition is not allowed, the status value is unknown or no driver is assigned when required.
      */
     @Transactional
-    public OrderResponseDto updateStatus(UUID id, String newStatus){
+    public OrderResponseDto updateStatus(Long id, String newStatus){
         Order order = orderRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Order doesnt exist"));
         OrderStatus target = OrderStatus.valueOf(newStatus);
@@ -146,7 +144,7 @@ public class OrderService {
      * @throws java.lang.IllegalArgumentException If the order was already paid or is not in a cancellable status.
      */
     @Transactional
-    public OrderResponseDto cancel(UUID id){
+    public OrderResponseDto cancel(Long id){
         Order order = orderRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Order doesnt exist"));
         if (order.getStatus() != OrderStatus.PLACED && order.getStatus() != OrderStatus.PREPARING) {
@@ -176,7 +174,7 @@ public class OrderService {
      * @throws java.lang.IllegalArgumentException If the order is not in PREPARING status, already has a driver or the driver is not available.
      */
     @Transactional
-    public OrderResponseDto assignDriver(UUID orderId, UUID driverId){
+    public OrderResponseDto assignDriver(Long orderId, Long driverId){
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new EntityNotFoundException("Order doesnt exist"));
         DeliveryDriver driver = deliveryDriverRepository.findById(driverId)
@@ -206,7 +204,7 @@ public class OrderService {
      * @throws jakarta.persistence.EntityNotFoundException If the order cannot be found.
      */
     @Transactional
-    public BigDecimal recalculateTotal(UUID id){
+    public BigDecimal recalculateTotal(Long id){
         Order order = orderRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Order doesnt exist"));
         BigDecimal total = calculateTotal(order.getOrderItems());
@@ -223,7 +221,7 @@ public class OrderService {
      * @throws jakarta.persistence.EntityNotFoundException If the customer cannot be found.
      */
     @Transactional
-    public List<OrderResponseDto> findAllByCustomer(UUID customerId){
+    public List<OrderResponseDto> findAllByCustomer(Long customerId){
         if (!customerRepository.existsById(customerId)) {
             throw new EntityNotFoundException("Customer doesnt exist");
         }

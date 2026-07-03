@@ -5,10 +5,8 @@ import rs.fon.bg.ac.rs.marinkovic_stefan.domain.MenuItem;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
-
-public interface MenuItemRepository extends JpaRepository<MenuItem, UUID> {
-    Optional<MenuItem> findByIdAndRestaurantId(UUID id, UUID restaurantId);
-    boolean existsByRestaurantIdAndNameIgnoreCase(UUID restaurantId, String name);
-    List<MenuItem> findAllByRestaurantIdAndAvailableTrue(UUID restaurantId);
+public interface MenuItemRepository extends JpaRepository<MenuItem, Long> {
+    Optional<MenuItem> findByIdAndRestaurantId(Long id, Long restaurantId);
+    boolean existsByRestaurantIdAndNameIgnoreCase(Long restaurantId, String name);
+    List<MenuItem> findAllByRestaurantIdAndAvailableTrue(Long restaurantId);
 }

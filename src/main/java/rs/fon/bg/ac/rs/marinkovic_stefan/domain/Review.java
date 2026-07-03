@@ -7,8 +7,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
-
 /**
  * Represents a review a customer has left for a restaurant after a delivered order.
  * Stores the numeric rating and an optional comment, and maps the customer
@@ -27,8 +25,8 @@ public class Review {
      * Unique identifier for the review.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * Numeric rating the customer gave to the restaurant.

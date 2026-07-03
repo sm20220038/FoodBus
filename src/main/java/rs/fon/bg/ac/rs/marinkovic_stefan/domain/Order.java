@@ -8,8 +8,6 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
-
 /**
  * Represents a single customer order in the FoodBus application.
  * Encapsulates the ordered items, the calculated total price, the current
@@ -29,8 +27,8 @@ public class Order {
      * Unique identifier for the order.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * The date and time when the order was created.

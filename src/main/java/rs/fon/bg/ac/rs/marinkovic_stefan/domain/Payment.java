@@ -7,8 +7,6 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.UUID;
-
 /**
  * Represents a payment that settles a single order.
  * Stores the paid amount, the payment method and the moment of payment.
@@ -27,8 +25,8 @@ public class Payment {
      * Unique identifier for the payment.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * The amount of money that was paid, equal to the order total.

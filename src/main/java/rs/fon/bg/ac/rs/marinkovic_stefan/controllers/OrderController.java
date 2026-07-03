@@ -10,8 +10,6 @@ import rs.fon.bg.ac.rs.marinkovic_stefan.services.OrderService;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
-
 @RestController
 public class OrderController {
     private final OrderService orderService;
@@ -35,7 +33,7 @@ public class OrderController {
     }
 
     @PutMapping("api/orders/{id}/status")
-    public ResponseEntity<Object> updateStatus(@PathVariable UUID id, @RequestBody OrderStatusUpdateDto statusUpdate){
+    public ResponseEntity<Object> updateStatus(@PathVariable Long id, @RequestBody OrderStatusUpdateDto statusUpdate){
         try {
             OrderResponseDto response = orderService.updateStatus(id, statusUpdate.status());
             return ResponseEntity
@@ -49,7 +47,7 @@ public class OrderController {
     }
 
     @PutMapping("api/orders/{id}/cancel")
-    public ResponseEntity<Object> cancel(@PathVariable UUID id){
+    public ResponseEntity<Object> cancel(@PathVariable Long id){
         try {
             OrderResponseDto response = orderService.cancel(id);
             return ResponseEntity
@@ -63,7 +61,7 @@ public class OrderController {
     }
 
     @PutMapping("api/orders/{orderId}/driver/{driverId}")
-    public ResponseEntity<Object> assignDriver(@PathVariable UUID orderId, @PathVariable UUID driverId){
+    public ResponseEntity<Object> assignDriver(@PathVariable Long orderId, @PathVariable Long driverId){
         try {
             OrderResponseDto response = orderService.assignDriver(orderId, driverId);
             return ResponseEntity
@@ -77,7 +75,7 @@ public class OrderController {
     }
 
     @GetMapping("api/orders/{id}/total")
-    public ResponseEntity<Object> recalculateTotal(@PathVariable UUID id){
+    public ResponseEntity<Object> recalculateTotal(@PathVariable Long id){
         try {
             BigDecimal total = orderService.recalculateTotal(id);
             return ResponseEntity
@@ -91,7 +89,7 @@ public class OrderController {
     }
 
     @GetMapping("api/customers/{customerId}/orders")
-    public ResponseEntity<Object> orderHistory(@PathVariable UUID customerId){
+    public ResponseEntity<Object> orderHistory(@PathVariable Long customerId){
         try {
             List<OrderResponseDto> response = orderService.findAllByCustomer(customerId);
             return ResponseEntity

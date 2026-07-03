@@ -14,8 +14,6 @@ import org.mockito.Mockito;
 
 import java.time.LocalDateTime;
 import java.util.Set;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ReviewTest {
@@ -42,7 +40,7 @@ class ReviewTest {
     @DisplayName("Should pass validation for every rating between 1 and 5")
     void validate_ValidReview_NoViolations(int rating) {
         Review review = Review.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .rating(rating)
                 .comment("Odlicna hrana, brza dostava!")
                 .createdAt(LocalDateTime.now())

@@ -13,8 +13,6 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Set;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class DeliveryDriverTest {
@@ -40,7 +38,7 @@ class DeliveryDriverTest {
     @DisplayName("Should pass validation with valid delivery driver parameters")
     void validate_ValidDriver_NoViolations(String name, String vehicle, boolean available) {
         DeliveryDriver driver = DeliveryDriver.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .name(name)
                 .phone("0651234567")
                 .vehicle(vehicle)

@@ -23,8 +23,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -46,11 +44,11 @@ class OrderServiceTest {
     @InjectMocks
     private OrderService orderService;
 
-    private UUID customerId;
-    private UUID restaurantId;
-    private UUID menuItemId;
-    private UUID orderId;
-    private UUID driverId;
+    private Long customerId;
+    private Long restaurantId;
+    private Long menuItemId;
+    private Long orderId;
+    private Long driverId;
     private Customer sampleCustomer;
     private Restaurant sampleRestaurant;
     private MenuItem sampleMenuItem;
@@ -58,11 +56,11 @@ class OrderServiceTest {
 
     @BeforeEach
     void setUp() {
-        customerId = UUID.randomUUID();
-        restaurantId = UUID.randomUUID();
-        menuItemId = UUID.randomUUID();
-        orderId = UUID.randomUUID();
-        driverId = UUID.randomUUID();
+        customerId = 1L;
+        restaurantId = 2L;
+        menuItemId = 3L;
+        orderId = 4L;
+        driverId = 5L;
 
         sampleCustomer = Customer.builder()
                 .id(customerId)
@@ -381,7 +379,7 @@ class OrderServiceTest {
     @DisplayName("Should throw IllegalArgumentException when the order already has a driver")
     void assignDriver_AlreadyAssigned_ThrowsIllegalArgumentException() {
         Order order = buildOrder(OrderStatus.PREPARING);
-        order.setDriver(DeliveryDriver.builder().id(UUID.randomUUID()).name("Petar Petrovic").build());
+        order.setDriver(DeliveryDriver.builder().id(6L).name("Petar Petrovic").build());
 
         when(orderRepository.findById(orderId)).thenReturn(Optional.of(order));
         when(deliveryDriverRepository.findById(driverId)).thenReturn(Optional.of(sampleDriver));

@@ -8,8 +8,6 @@ import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.UUID;
-
 /**
  * Represents a single line of an order connecting the order with a menu item.
  * Stores the ordered quantity and the unit price at the moment of ordering,
@@ -28,8 +26,8 @@ public class OrderItem {
      * Unique identifier for the order item.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * Number of units of the menu item in this order line.

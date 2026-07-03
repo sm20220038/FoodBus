@@ -7,9 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
-public record OrderResponseDto(UUID id, LocalDateTime orderDate, String status, String customerName,
+public record OrderResponseDto(Long id, LocalDateTime orderDate, String status, String customerName,
                                String restaurantName, String driverName, List<OrderItemResponseDto> items,
                                BigDecimal total) {
 

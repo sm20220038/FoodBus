@@ -5,8 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.List;
-import java.util.UUID;
-
 /**
  * Represents a delivery driver who delivers orders to customers.
  * Holds contact information, the vehicle used for deliveries and the
@@ -25,8 +23,8 @@ public class DeliveryDriver {
      * Unique identifier for the delivery driver.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * Full name of the driver.

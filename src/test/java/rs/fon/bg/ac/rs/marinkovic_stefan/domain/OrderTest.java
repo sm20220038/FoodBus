@@ -17,8 +17,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderTest {
@@ -47,7 +45,7 @@ class OrderTest {
     @DisplayName("Should pass validation for every order status with valid fields")
     void validate_ValidOrder_NoViolations(OrderStatus status) {
         Order order = Order.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .orderDate(LocalDateTime.now())
                 .status(status)
                 .total(new BigDecimal("1180.00"))

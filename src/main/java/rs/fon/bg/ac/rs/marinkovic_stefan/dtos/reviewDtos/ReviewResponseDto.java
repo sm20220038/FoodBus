@@ -3,9 +3,7 @@ package rs.fon.bg.ac.rs.marinkovic_stefan.dtos.reviewDtos;
 import rs.fon.bg.ac.rs.marinkovic_stefan.domain.Review;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
-
-public record ReviewResponseDto(UUID id, int rating, String comment, LocalDateTime createdAt,
+public record ReviewResponseDto(Long id, int rating, String comment, LocalDateTime createdAt,
                                 String customerName, String restaurantName) {
 
     public static ReviewResponseDto fromEntity(Review review){

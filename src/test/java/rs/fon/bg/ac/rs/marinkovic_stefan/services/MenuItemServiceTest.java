@@ -19,8 +19,6 @@ import rs.fon.bg.ac.rs.marinkovic_stefan.repositories.RestaurantRepository;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -36,15 +34,15 @@ class MenuItemServiceTest {
     @InjectMocks
     private MenuItemService menuItemService;
 
-    private UUID restaurantId;
-    private UUID menuItemId;
+    private Long restaurantId;
+    private Long menuItemId;
     private Restaurant sampleRestaurant;
     private MenuItem sampleMenuItem;
 
     @BeforeEach
     void setUp() {
-        restaurantId = UUID.randomUUID();
-        menuItemId = UUID.randomUUID();
+        restaurantId = 1L;
+        menuItemId = 2L;
 
         sampleRestaurant = Restaurant.builder()
                 .id(restaurantId)
@@ -139,7 +137,7 @@ class MenuItemServiceTest {
     @DisplayName("Should return all available menu items for an existing restaurant")
     void viewMenu_ExistingRestaurant_ReturnsAvailableItems() {
         MenuItem secondItem = MenuItem.builder()
-                .id(UUID.randomUUID())
+                .id(3L)
                 .name("Pomfrit")
                 .price(new BigDecimal("250.00"))
                 .available(true)

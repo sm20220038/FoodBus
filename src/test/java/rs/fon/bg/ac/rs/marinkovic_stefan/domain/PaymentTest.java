@@ -16,8 +16,6 @@ import org.mockito.Mockito;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Set;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class PaymentTest {
@@ -42,7 +40,7 @@ class PaymentTest {
     @DisplayName("Should pass validation for every payment method with valid fields")
     void validate_ValidPayment_NoViolations(PayMethod method) {
         Payment payment = Payment.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .amount(new BigDecimal("1180.00"))
                 .method(method)
                 .paidAt(LocalDateTime.now())

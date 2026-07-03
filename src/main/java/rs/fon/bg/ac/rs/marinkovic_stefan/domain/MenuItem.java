@@ -8,8 +8,6 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
-
 /**
  * Represents a single dish or product on a restaurant menu.
  * Holds the price and availability of the item and maps the restaurant
@@ -28,8 +26,8 @@ public class MenuItem {
      * Unique identifier for the menu item.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * Name of the dish or product.

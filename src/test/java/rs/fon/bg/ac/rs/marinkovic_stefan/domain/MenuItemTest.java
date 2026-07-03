@@ -15,8 +15,6 @@ import org.mockito.Mockito;
 
 import java.math.BigDecimal;
 import java.util.Set;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class MenuItemTest {
@@ -40,7 +38,7 @@ class MenuItemTest {
     @DisplayName("Should pass validation when all menu item fields are valid")
     void validate_ValidMenuItem_NoViolations() {
         MenuItem menuItem = MenuItem.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .name("Cheeseburger")
                 .description("Juneca pljeskavica, cedar, kiseli krastavci")
                 .price(new BigDecimal("590.00"))

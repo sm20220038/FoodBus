@@ -16,8 +16,6 @@ import rs.fon.bg.ac.rs.marinkovic_stefan.repositories.RestaurantRepository;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -36,7 +34,7 @@ class RestaurantServiceTest {
     @BeforeEach
     void setUp() {
         firstRestaurant = Restaurant.builder()
-                .id(UUID.randomUUID())
+                .id(1L)
                 .name("Burger House")
                 .address("Bulevar kralja Aleksandra 73, Beograd")
                 .cuisine("Roostilj")
@@ -45,7 +43,7 @@ class RestaurantServiceTest {
                 .build();
 
         secondRestaurant = Restaurant.builder()
-                .id(UUID.randomUUID())
+                .id(2L)
                 .name("Pizza Bar")
                 .address("Knez Mihailova 5, Beograd")
                 .cuisine("Italijanska")
