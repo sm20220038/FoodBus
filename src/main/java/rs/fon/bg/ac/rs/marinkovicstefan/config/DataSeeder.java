@@ -24,7 +24,7 @@ import java.util.List;
 public class DataSeeder implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(DataSeeder.class);
-    private static final String AreaZone = "Europe/Belgrade";
+    private static final String AREAZONE = "Europe/Belgrade";
     private final RestaurantRepository restaurantRepository;
     private final MenuItemRepository menuItemRepository;
     private final CustomerRepository customerRepository;
@@ -107,7 +107,7 @@ public class DataSeeder implements CommandLineRunner {
 
         // ----- Order 1: delivered, paid, reviewed -----
         Order deliveredOrder = Order.builder()
-                .orderDate(LocalDateTime.now(ZoneId.of(AreaZone)).minusDays(1))
+                .orderDate(LocalDateTime.now(ZoneId.of(AREAZONE)).minusDays(1))
                 .status(OrderStatus.DELIVERED)
                 .customer(marko).restaurant(burgerHouse).driver(nikola)
                 .build();
@@ -124,17 +124,17 @@ public class DataSeeder implements CommandLineRunner {
 
         paymentRepository.save(Payment.builder()
                 .amount(deliveredOrder.getTotal()).method(PayMethod.CARD)
-                .paidAt(LocalDateTime.now(ZoneId.of(AreaZone)).minusDays(1).plusMinutes(35))
+                .paidAt(LocalDateTime.now(ZoneId.of(AREAZONE)).minusDays(1).plusMinutes(35))
                 .order(deliveredOrder).build());
 
         reviewRepository.save(Review.builder()
                 .rating(5).comment("Odlicna hrana, brza dostava!")
-                .createdAt(LocalDateTime.now(ZoneId.of(AreaZone)).minusHours(20))
+                .createdAt(LocalDateTime.now(ZoneId.of(AREAZONE)).minusHours(20))
                 .customer(marko).restaurant(burgerHouse).build());
 
         // ----- Order 2: still being prepared -----
         Order preparingOrder = Order.builder()
-                .orderDate(LocalDateTime.now(ZoneId.of(AreaZone)).minusMinutes(15))
+                .orderDate(LocalDateTime.now(ZoneId.of(AREAZONE)).minusMinutes(15))
                 .status(OrderStatus.PREPARING)
                 .customer(jovana).restaurant(pizzaBar)
                 .build();

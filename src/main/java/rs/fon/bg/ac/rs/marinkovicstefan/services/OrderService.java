@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Service
 public class OrderService {
-    private static final String OrderNotFoundException = "Order doesnt exist";
+    private static final String ORDERNOTFOUNDEXCEPTION = "Order doesnt exist";
     private final OrderRepository orderRepository;
     private final CustomerRepository customerRepository;
     private final RestaurantRepository restaurantRepository;
@@ -110,7 +110,7 @@ public class OrderService {
     @Transactional
     public OrderResponseDto updateStatus(Long id, String newStatus){
         Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(OrderNotFoundException));
+                .orElseThrow(() -> new EntityNotFoundException(ORDERNOTFOUNDEXCEPTION));
         OrderStatus target = OrderStatus.valueOf(newStatus);
 
         OrderStatus expectedPrevious = switch (target) {
@@ -148,7 +148,7 @@ public class OrderService {
     @Transactional
     public OrderResponseDto cancel(Long id){
         Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(OrderNotFoundException));
+                .orElseThrow(() -> new EntityNotFoundException(ORDERNOTFOUNDEXCEPTION));
         if (order.getStatus() != OrderStatus.PLACED && order.getStatus() != OrderStatus.PREPARING) {
             throw new IllegalArgumentException("Order in status " + order.getStatus() + " cannot be cancelled");
         }
@@ -178,7 +178,7 @@ public class OrderService {
     @Transactional
     public OrderResponseDto assignDriver(Long orderId, Long driverId){
         Order order = orderRepository.findById(orderId)
-                .orElseThrow(() -> new EntityNotFoundException(OrderNotFoundException));
+                .orElseThrow(() -> new EntityNotFoundException(ORDERNOTFOUNDEXCEPTION));
         DeliveryDriver driver = deliveryDriverRepository.findById(driverId)
                 .orElseThrow(() -> new EntityNotFoundException("Driver doesnt exist"));
 
@@ -208,7 +208,7 @@ public class OrderService {
     @Transactional
     public BigDecimal recalculateTotal(Long id){
         Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(OrderNotFoundException));
+                .orElseThrow(() -> new EntityNotFoundException(ORDERNOTFOUNDEXCEPTION));
         BigDecimal total = calculateTotal(order.getOrderItems());
         order.setTotal(total);
         orderRepository.save(order);
