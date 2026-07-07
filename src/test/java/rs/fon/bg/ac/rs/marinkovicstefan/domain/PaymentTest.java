@@ -11,13 +11,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mockito;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
-
+import static org.mockito.Mockito.mock;
 class PaymentTest {
 
     private Validator validator;
@@ -28,7 +26,7 @@ class PaymentTest {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
 
-        mockOrder = Mockito.mock(Order.class);
+        mockOrder = mock(Order.class);
     }
 
     @AfterEach

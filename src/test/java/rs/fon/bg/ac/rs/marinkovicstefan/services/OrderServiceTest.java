@@ -12,9 +12,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.*;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderItemAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderItemAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.*;
 
 import java.math.BigDecimal;

@@ -11,7 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Restaurant;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantDtos.RestaurantResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantdtos.RestaurantResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.RestaurantRepository;
 
 import java.util.Collections;

@@ -3,8 +3,8 @@ package rs.fon.bg.ac.rs.marinkovicstefan.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerDtos.CustomerAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerDtos.CustomerResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerdtos.CustomerAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerdtos.CustomerResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.services.CustomerService;
 
 @RestController

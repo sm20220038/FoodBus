@@ -11,8 +11,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.MenuItem;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Restaurant;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuItemDtos.MenuItemAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuItemDtos.MenuItemResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuitemdtos.MenuItemAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuitemdtos.MenuItemResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.MenuItemRepository;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.RestaurantRepository;
 

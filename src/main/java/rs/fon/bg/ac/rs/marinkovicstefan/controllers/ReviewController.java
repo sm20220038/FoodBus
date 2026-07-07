@@ -3,9 +3,9 @@ package rs.fon.bg.ac.rs.marinkovicstefan.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.reviewDtos.ReviewAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.reviewDtos.ReviewResponseDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.reviewDtos.ReviewUpdateDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.reviewdtos.ReviewAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.reviewdtos.ReviewResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.reviewdtos.ReviewUpdateDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.services.ReviewService;
 
 @RestController

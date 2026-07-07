@@ -3,9 +3,9 @@ package rs.fon.bg.ac.rs.marinkovicstefan.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuItemDtos.MenuItemAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuItemDtos.MenuItemResponseDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuItemDtos.MenuItemUpdateDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuitemdtos.MenuItemAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuitemdtos.MenuItemResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuitemdtos.MenuItemUpdateDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.services.MenuItemService;
 
 import java.util.List;

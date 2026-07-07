@@ -3,8 +3,8 @@ package rs.fon.bg.ac.rs.marinkovicstefan.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliveryDriverDtos.DeliveryDriverAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliveryDriverDtos.DeliveryDriverResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliverydriverdtos.DeliveryDriverAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliverydriverdtos.DeliveryDriverResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.services.DeliveryDriverService;
 
 @RestController

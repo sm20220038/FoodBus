@@ -1,4 +1,4 @@
-package rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerDtos;
+package rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerdtos;
 
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Customer;
 

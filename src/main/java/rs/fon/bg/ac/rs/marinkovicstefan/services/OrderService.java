@@ -4,9 +4,9 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.*;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderItemAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderItemAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.*;
 
 import java.math.BigDecimal;
@@ -27,7 +27,7 @@ public class OrderService {
     private final RestaurantRepository restaurantRepository;
     private final MenuItemRepository menuItemRepository;
     private final DeliveryDriverRepository deliveryDriverRepository;
-    private final String orderNotFoundException = "Order doesnt exist";
+    private final static String orderNotFoundException = "Order doesnt exist";
     public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository,
                         RestaurantRepository restaurantRepository, MenuItemRepository menuItemRepository,
                         DeliveryDriverRepository deliveryDriverRepository) {

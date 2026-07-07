@@ -11,14 +11,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mockito;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
-
+import static org.mockito.Mockito.mock;
 class OrderTest {
 
     private Validator validator;
@@ -31,9 +29,9 @@ class OrderTest {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
 
-        mockCustomer = Mockito.mock(Customer.class);
-        mockRestaurant = Mockito.mock(Restaurant.class);
-        mockOrderItems = Mockito.mock(List.class);
+        mockCustomer = mock(Customer.class);
+        mockRestaurant = mock(Restaurant.class);
+        mockOrderItems = mock(List.class);
     }
 
     @AfterEach

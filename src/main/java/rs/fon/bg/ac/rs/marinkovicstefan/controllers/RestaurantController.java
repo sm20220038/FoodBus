@@ -3,8 +3,8 @@ package rs.fon.bg.ac.rs.marinkovicstefan.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantDtos.RestaurantAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantDtos.RestaurantResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantdtos.RestaurantAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantdtos.RestaurantResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.services.RestaurantService;
 
 import java.util.List;

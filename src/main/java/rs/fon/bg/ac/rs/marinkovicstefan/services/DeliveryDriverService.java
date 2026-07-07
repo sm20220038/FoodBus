@@ -4,8 +4,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.DeliveryDriver;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliveryDriverDtos.DeliveryDriverAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliveryDriverDtos.DeliveryDriverResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliverydriverdtos.DeliveryDriverAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliverydriverdtos.DeliveryDriverResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.DeliveryDriverRepository;
 
 /**

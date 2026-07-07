@@ -5,8 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentDtos.PaymentAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentDtos.PaymentResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentdtos.PaymentAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentdtos.PaymentResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.services.PaymentService;
 
 @RestController

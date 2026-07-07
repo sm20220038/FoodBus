@@ -10,12 +10,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mockito;
-
 import java.time.LocalDateTime;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
-
+import static org.mockito.Mockito.mock;
 class ReviewTest {
 
     private Validator validator;
@@ -27,8 +25,8 @@ class ReviewTest {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
 
-        mockCustomer = Mockito.mock(Customer.class);
-        mockRestaurant = Mockito.mock(Restaurant.class);
+        mockCustomer = mock(Customer.class);
+        mockRestaurant = mock(Restaurant.class);
     }
 
     @AfterEach

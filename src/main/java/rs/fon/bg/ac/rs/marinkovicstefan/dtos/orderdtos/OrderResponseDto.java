@@ -1,4 +1,4 @@
-package rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos;
+package rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos;
 
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Order;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.OrderItem;

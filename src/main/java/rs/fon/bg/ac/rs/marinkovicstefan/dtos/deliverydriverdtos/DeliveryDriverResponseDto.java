@@ -1,4 +1,4 @@
-package rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliveryDriverDtos;
+package rs.fon.bg.ac.rs.marinkovicstefan.dtos.deliverydriverdtos;
 
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.DeliveryDriver;
 

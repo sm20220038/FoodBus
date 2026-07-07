@@ -4,8 +4,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Customer;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerDtos.CustomerAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerDtos.CustomerResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerdtos.CustomerAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.customerdtos.CustomerResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.CustomerRepository;
 
 /**

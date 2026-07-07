@@ -32,6 +32,7 @@ public class DataSeeder implements CommandLineRunner {
     private final OrderRepository orderRepository;
     private final PaymentRepository paymentRepository;
     private final ReviewRepository reviewRepository;
+    private final static String areaZone = "Europe/Belgrade";
 
     public DataSeeder(RestaurantRepository restaurantRepository, MenuItemRepository menuItemRepository,
                       CustomerRepository customerRepository, DeliveryDriverRepository deliveryDriverRepository,
@@ -106,7 +107,7 @@ public class DataSeeder implements CommandLineRunner {
 
         // ----- Order 1: delivered, paid, reviewed -----
         Order deliveredOrder = Order.builder()
-                .orderDate(LocalDateTime.now(ZoneId.of("Europe/Belgrade")).minusDays(1))
+                .orderDate(LocalDateTime.now(ZoneId.of(areaZone)).minusDays(1))
                 .status(OrderStatus.DELIVERED)
                 .customer(marko).restaurant(burgerHouse).driver(nikola)
                 .build();
@@ -123,17 +124,17 @@ public class DataSeeder implements CommandLineRunner {
 
         paymentRepository.save(Payment.builder()
                 .amount(deliveredOrder.getTotal()).method(PayMethod.CARD)
-                .paidAt(LocalDateTime.now(ZoneId.of("Europe/Belgrade")).minusDays(1).plusMinutes(35))
+                .paidAt(LocalDateTime.now(ZoneId.of(areaZone)).minusDays(1).plusMinutes(35))
                 .order(deliveredOrder).build());
 
         reviewRepository.save(Review.builder()
                 .rating(5).comment("Odlicna hrana, brza dostava!")
-                .createdAt(LocalDateTime.now(ZoneId.of("Europe/Belgrade")).minusHours(20))
+                .createdAt(LocalDateTime.now(ZoneId.of(areaZone)).minusHours(20))
                 .customer(marko).restaurant(burgerHouse).build());
 
         // ----- Order 2: still being prepared -----
         Order preparingOrder = Order.builder()
-                .orderDate(LocalDateTime.now(ZoneId.of("Europe/Belgrade")).minusMinutes(15))
+                .orderDate(LocalDateTime.now(ZoneId.of(areaZone)).minusMinutes(15))
                 .status(OrderStatus.PREPARING)
                 .customer(jovana).restaurant(pizzaBar)
                 .build();

@@ -1,4 +1,4 @@
-package rs.fon.bg.ac.rs.marinkovicstefan.dtos.reviewDtos;
+package rs.fon.bg.ac.rs.marinkovicstefan.dtos.reviewdtos;
 
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Review;
 

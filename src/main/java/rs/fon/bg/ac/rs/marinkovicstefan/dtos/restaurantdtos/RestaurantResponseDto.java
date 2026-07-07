@@ -1,4 +1,4 @@
-package rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantDtos;
+package rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantdtos;
 
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Restaurant;
 public record RestaurantResponseDto(Long id, String name, String address, String cuisine, double rating, String email) {

@@ -12,8 +12,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Order;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.OrderStatus;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Payment;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentDtos.PaymentAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentDtos.PaymentResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentdtos.PaymentAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentdtos.PaymentResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.OrderRepository;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.PaymentRepository;
 

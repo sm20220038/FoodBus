@@ -3,9 +3,9 @@ package rs.fon.bg.ac.rs.marinkovicstefan.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderResponseDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderDtos.OrderStatusUpdateDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.orderdtos.OrderStatusUpdateDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.services.OrderService;
 
 import java.math.BigDecimal;

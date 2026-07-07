@@ -1,4 +1,4 @@
-package rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuItemDtos;
+package rs.fon.bg.ac.rs.marinkovicstefan.dtos.menuitemdtos;
 
 import java.math.BigDecimal;
 

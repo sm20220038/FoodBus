@@ -1,4 +1,4 @@
-package rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentDtos;
+package rs.fon.bg.ac.rs.marinkovicstefan.dtos.paymentdtos;
 
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Payment;
 

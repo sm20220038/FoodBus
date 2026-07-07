@@ -4,8 +4,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import rs.fon.bg.ac.rs.marinkovicstefan.domain.Restaurant;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantDtos.RestaurantAddDto;
-import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantDtos.RestaurantResponseDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantdtos.RestaurantAddDto;
+import rs.fon.bg.ac.rs.marinkovicstefan.dtos.restaurantdtos.RestaurantResponseDto;
 import rs.fon.bg.ac.rs.marinkovicstefan.repositories.RestaurantRepository;
 
 import java.util.ArrayList;
